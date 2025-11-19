@@ -1,0 +1,26 @@
+book_title,story_author,isbn13,page_count,book_tags,author_tags
+Kafka on the Shore,Haruki Murakami,9781400079278,467,magical-realism;surreal,japanese
+Norwegian Wood,Haruki Murakami,9780375704024,296,romance;coming-of-age,japanese
+1Q84,Haruki Murakami,9780307476463,925,surreal;thriller,japanese
+The Handmaid's Tale,Margaret Atwood,9780385490818,311,dystopian;classic,canadian
+Oryx and Crake,Margaret Atwood,9780385721677,416,sci-fi;speculative,canadian
+Alias Grace,Margaret Atwood,9780385490443,480,historical-fiction,canadian
+Dune,Frank Herbert,9780441172719,688,sci-fi;classic,american
+Children of Dune,Frank Herbert,9780441104024,416,sci-fi;epic,american
+Neuromancer,William Gibson,9780441569595,288,cyberpunk;classic,canadian
+A Wizard of Earthsea,9780765326355,sci-fi;philosophy,,,
+Count Zero,William Gibson,9780441117734,272,cyberpunk;sequel,canadian
+Pattern Recognition,William Gibson,9780425198681,367,thriller;tech,canadian
+The Hobbit,J.R.R. Tolkien,9780345339683,310,fantasy;classic,british
+The Lord of the Rings,J.R.R. Tolkien,9780618640157,1178,fantasy;epic,british
+The Silmarillion,J.R.R. Tolkien,9780345325815,365,mythology;fantasy,british
+Kafka on the Shore,Haruki Murakami,9781400079278,467,magical-realism;surreal,japanese
+1984,George Orwell,9780451524935,328,dystopian;political,british
+Animal Farm,George Orwell,9780451526342,112,satire;political,british
+Brave New World,Aldous Huxley,9780060850524,288,dystopian;philosophical,british
+Fahrenheit 451,Ray Bradbury,9781451673319,256,classic;dystopian,american
+The Martian,Andy Weir,9780553418026,387,sci-fi;survival,american
+Project Hail Mary,Andy Weir,9780593135204,496,sci-fi;space,american
+Mistborn,Brandon Sanderson,9780765350381,541,fantasy;magic,american
+The Way of Kings,Brandon Sanderson,9780765326355,1007,epic;fantasy,american
+The Dispossessed,Ursula K. Le Guin,9780060512750,400,sci-fi;utopian,american

@@ -1,4 +1,4 @@
-name: Code Formatting Check
+name: CI
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   format-check:
+    name: Code Formatting
     runs-on: ubuntu-latest
 
     steps:
@@ -37,4 +38,25 @@ jobs:
         run: vendor/bin/pint --test
 
       - name: Check JS/JSX formatting (Prettier)
-        run: npx prettier --check "resources/**/*.{js,jsx,css}"
+        run: npx prettier --check "resources/**/*.{js,jsx,tsx,css}"
+
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite
+          coverage: none
+
+      - name: Install PHP dependencies
+        run: composer install --prefer-dist --no-progress --no-interaction
+
+      - name: Run tests
+        run: php artisan test

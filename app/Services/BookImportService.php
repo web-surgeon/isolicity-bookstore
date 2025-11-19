@@ -115,12 +115,16 @@ class BookImportService
 
         $author = $this->getOrCreateAuthor($authorName);
 
-        $book = $user->books()->firstOrCreate([
-            'author_id' => $author->id,
-            'title' => $bookData['title'],
-            'isbn13' => $bookData['isbn13'],
-            'page_count' => $bookData['page_count'],
-        ]);
+        $book = $user->books()->firstOrCreate(
+            [
+                'author_id' => $author->id,
+                'isbn13' => $bookData['isbn13'],
+            ],
+            [
+                'title' => $bookData['title'],
+                'page_count' => $bookData['page_count'],
+            ]
+        );
 
         $this->syncTags($book, $bookData['book_tags']);
         $this->syncTags($author, $bookData['author_tags']);
