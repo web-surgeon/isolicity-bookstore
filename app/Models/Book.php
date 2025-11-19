@@ -5,6 +5,8 @@ namespace App\Models;
 use App\Models\Traits\Taggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -33,5 +35,15 @@ class Book extends Model
     public function tags(): MorphToMany
     {
         return $this->morphToMany(Tag::class, 'taggable');
+    }
+
+    public function checkouts(): HasMany
+    {
+        return $this->hasMany(Checkout::class);
+    }
+
+    public function activeCheckout(): HasOne
+    {
+        return $this->hasOne(Checkout::class)->whereNull('returned_at');
     }
 }

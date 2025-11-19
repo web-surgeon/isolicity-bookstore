@@ -13,7 +13,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function Dashboard() {
+export default function Dashboard({ checkouts, books }) {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard" />
@@ -23,11 +23,11 @@ export default function Dashboard() {
                         <ImportCsv />
                     </div>
                     <div className="relative overflow-hidden rounded-xl border border-sidebar-border/70 bg-gray-50 p-4 dark:border-sidebar-border">
-                        <MyRentals />
+                        <MyRentals checkouts={checkouts} />
                     </div>
                 </div>
                 <div className="relative overflow-hidden rounded-xl border border-sidebar-border/70 bg-gray-50 p-4 dark:border-sidebar-border">
-                    <BookList />
+                    <BookList books={books} />
                 </div>
             </div>
         </AppLayout>

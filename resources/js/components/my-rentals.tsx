@@ -1,3 +1,5 @@
+import { Link } from '@inertiajs/react';
+
 interface Checkout {
     id: number;
     checked_out_at: string;
@@ -38,21 +40,18 @@ export default function MyRentals({ checkouts = [] }: MyRentalsProps) {
                 <div className="overflow-x-auto rounded-lg border border-gray-200">
                     <table className="w-full">
                         <thead>
-                            <tr className="border-b border-gray-200 bg-gray-50">
+                            <tr className="border-b border-gray-200 bg-gray-100">
                                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">
                                     Book Title
                                 </th>
-                                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">
+                                {/* <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">
                                     Author
-                                </th>
+                                </th> */}
                                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">
                                     Checked Out
                                 </th>
                                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">
                                     Due Date
-                                </th>
-                                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">
-                                    Status
                                 </th>
                             </tr>
                         </thead>
@@ -60,32 +59,30 @@ export default function MyRentals({ checkouts = [] }: MyRentalsProps) {
                             {activeRentals.map((checkout) => (
                                 <tr
                                     key={checkout.id}
-                                    className="border-b border-gray-200 hover:bg-gray-50"
+                                    className="border-b border-gray-200 odd:bg-white even:bg-gray-50 hover:bg-gray-100"
                                 >
                                     <td className="px-4 py-3 text-sm text-gray-900">
-                                        {checkout.book.title}
+                                        <Link
+                                            href={`/books/${checkout.book.id}`}
+                                            className="text-blue-600 hover:text-blue-800 hover:underline"
+                                        >
+                                            {checkout.book.title}
+                                        </Link>
                                     </td>
-                                    <td className="px-4 py-3 text-sm text-gray-900">
+                                    {/* <td className="px-4 py-3 text-sm text-gray-900">
                                         {checkout.book.author.name}
-                                    </td>
+                                    </td> */}
                                     <td className="px-4 py-3 text-sm text-gray-600">
                                         {formatDate(checkout.checked_out_at)}
                                     </td>
-                                    <td className="px-4 py-3 text-sm text-gray-600">
+                                    <td
+                                        className={`px-4 py-3 text-sm text-gray-600 ${
+                                            isOverdue(checkout.due_at)
+                                                ? 'text-red-800'
+                                                : 'text-green-800'
+                                        }`}
+                                    >
                                         {formatDate(checkout.due_at)}
-                                    </td>
-                                    <td className="px-4 py-3 text-sm">
-                                        <span
-                                            className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${
-                                                isOverdue(checkout.due_at)
-                                                    ? 'bg-red-100 text-red-800'
-                                                    : 'bg-green-100 text-green-800'
-                                            }`}
-                                        >
-                                            {isOverdue(checkout.due_at)
-                                                ? 'Overdue'
-                                                : 'Active'}
-                                        </span>
                                     </td>
                                 </tr>
                             ))}
