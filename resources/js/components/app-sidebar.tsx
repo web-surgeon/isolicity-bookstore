@@ -27,12 +27,12 @@ const mainNavItems: NavItem[] = [
 const footerNavItems: NavItem[] = [
     {
         title: 'Repository',
-        href: 'https://github.com/web-surgeon/isolicity-bookstore',
+        href: 'https://github.com/web-surgeon/isolocity-bookstore',
         icon: Folder,
     },
     {
         title: 'Documentation',
-        href: 'https://github.com/web-surgeon/isolicity-bookstore/blob/main/NOTES.md',
+        href: 'https://github.com/web-surgeon/isolocity-bookstore/blob/main/NOTES.md',
         icon: BookOpen,
     },
 ];

@@ -37,8 +37,8 @@ Built using the [Laravel React Starter Kit](https://laravel.com/docs/12.x/starte
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/web-surgeon/isolicity-bookstore.git
-   cd isolicity-bookstore
+   git clone https://github.com/web-surgeon/isolocity-bookstore.git
+   cd isolocity-bookstore
    ```
 
 2. **Install PHP dependencies:**
