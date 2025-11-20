@@ -60,7 +60,7 @@ class ImportBooksCommand extends Command
         if ($this->confirm('Do you wish to continue?')) {
             $results = $bookImportService->importFromCsv($filepath, $user);
 
-            dump($results);
+            $this->info("Import completed: {$results['created']} created, {$results['skipped']} skipped, {$results['failed']} failed");
 
             return 0;
         } else {
